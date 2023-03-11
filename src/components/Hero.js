@@ -41,11 +41,7 @@ const Hero = () => {
             </button>
           </div>
           {/* image */}
-          <div
-            className="xl:absolute xl:-right-12 xl:bottom-16"
-            data-aos="fade-up"
-            data-aos-delay="300"
-          >
+          <div className="xl:absolute xl:-right-12">
             <img src={image} alt="" />
           </div>
         </div>
