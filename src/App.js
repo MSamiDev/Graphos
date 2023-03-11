@@ -14,6 +14,7 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 import QNA from "./pages/QNA";
 import UploadExhibition from "./pages/Dashboard/UploadExhibition";
 import MarketPlaceUpload from "./pages/Dashboard/MarketPlaceUpload";
+import PhotoPrints from "./pages/PhotoPrints";
 
 // import components
 
@@ -36,6 +37,8 @@ const App = () => {
         <Route path="exhibition" element={<UploadExhibition />} />
         <Route path="marketplace" element={<MarketPlaceUpload />} />
         <Route path="qna" element={<QNA />} />
+        <Route path="photoprints" element={<PhotoPrints />} />
+
       </Routes>
     </Router>
   );

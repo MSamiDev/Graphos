@@ -28,8 +28,8 @@ export const navigationData = [
     href: "#",
   },
   {
-    name: "Gallery",
-    href: "#",
+    name: "Photo Prints",
+    href: "/photoprints",
   },
   {
     name: "Hire Photographers",

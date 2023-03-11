@@ -35,6 +35,7 @@ const UploadExhibition = () => {
 		tag: "",
     exhibition: "",
 		url: "",
+    likes: 0,
 		Date: new Date().toLocaleDateString(),
 		Time: new Date().toLocaleTimeString(),
 	});
