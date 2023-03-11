@@ -11,8 +11,10 @@ import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import BlogCreate from "./pages/BlogCreate";
 import Dashboard from "./pages/Dashboard/Dashboard";
+import QNA from "./pages/QNA";
 import UploadExhibition from "./pages/Dashboard/UploadExhibition";
 import MarketPlaceUpload from "./pages/Dashboard/MarketPlaceUpload";
+import PhotoPrints from "./pages/PhotoPrints";
 
 // import components
 
@@ -34,6 +36,9 @@ const App = () => {
         <Route path="dashboard" element={<Dashboard />} />
         <Route path="exhibition" element={<UploadExhibition />} />
         <Route path="marketplace" element={<MarketPlaceUpload />} />
+        <Route path="qna" element={<QNA />} />
+        <Route path="photoprints" element={<PhotoPrints />} />
+
       </Routes>
     </Router>
   );

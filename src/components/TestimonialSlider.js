@@ -24,7 +24,7 @@ const TestimonialSlider = () => {
         clickable: true,
       }}
       modules={[Pagination]}
-      className="mySwiper -ml-[400px]"
+      className="mySwiper"
     >
       {testimonialsData.map((slide, index) => {
         // destructure slide
