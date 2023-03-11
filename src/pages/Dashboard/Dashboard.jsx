@@ -1,8 +1,7 @@
-import React, { useRef } from "https://cdn.skypack.dev/react@17.0.1";
-import ReactDOM from "https://cdn.skypack.dev/react-dom@17.0.1";
-import Countdown from "https://cdn.skypack.dev/react-countdown";
+import React from "react";
+import Countdown from "react-countdown";
 import { auth } from "../../firbase";
-import { collection } from "firebase/firestore";
+// import { collection } from "firebase/firestore";
 import { onAuthStateChanged } from "firebase/auth";
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
