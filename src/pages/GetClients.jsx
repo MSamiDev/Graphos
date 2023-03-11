@@ -7,6 +7,7 @@ import { auth, db } from "../firbase";
 import Job from "../assets/img/Job-Banner.png";
 import { useNavigate } from "react-router-dom";
 import { onAuthStateChanged } from "firebase/auth";
+import emailjs from "emailjs-com";
 
 const GetClients = () => {
   const navigate = useNavigate();
@@ -24,6 +25,27 @@ const GetClients = () => {
       }
     });
   };
+
+  function sendMail(name, email) {
+    emailjs
+      .send(
+        "service_6kpfmja",
+        "template_nmyq33p",
+        {
+          name: name,
+          Cname: auth.currentUser?.displayName,
+          Cemail: auth.currentUser?.email,
+          email: email,
+        },
+        "M59Q72Ln2jOVV1krL"
+      )
+      .then(function (response) {
+        console.log("SUCCESS!", response.status, response.text);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }
 
   const usersCollection = db.collection("JobList");
 
@@ -69,7 +91,12 @@ const GetClients = () => {
                 {item.State}
               </span>
               <span className="inline-block">
-                <button class="ml-3 bg-teal-500 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded">
+                <button
+                  onClick={() => {
+                    sendMail(item.Name, item.Email);
+                  }}
+                  class="ml-3 bg-teal-500 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded"
+                >
                   Apply
                 </button>
               </span>
