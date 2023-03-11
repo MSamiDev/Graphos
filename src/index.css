@@ -88,6 +88,26 @@
   background-position: 0 5%;
   position: relative;
 }
+.card-image2 {
+  border-radius: 8px;
+  overflow: hidden;
+  padding-bottom: 65%;
+  background-image: url("https://assets.codepen.io/3685267/nft-dashboard-art-1.jpg");
+  background-repeat: no-repeat;
+  background-size: 130%;
+  background-position: 0 5%;
+  position: relative;
+}
+.card-image3 {
+  border-radius: 8px;
+  overflow: hidden;
+  padding-bottom: 65%;
+  background-image: url("https://assets.codepen.io/3685267/nft-dashboard-art-5.jpg");
+  background-repeat: no-repeat;
+  background-size: 130%;
+  background-position: 0 5%;
+  position: relative;
+}
 .card-heading {
   position: absolute;
   left: 10%;

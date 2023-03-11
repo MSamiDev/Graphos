@@ -1,10 +1,13 @@
 import React from "react";
 import Countdown from "react-countdown";
-import { auth } from "../../firbase";
+import { auth, db, storage } from "../../firbase";
 // import { collection } from "firebase/firestore";
 import { onAuthStateChanged } from "firebase/auth";
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { v4 as uuidv4 } from "uuid";
+import { toast, Toaster } from "react-hot-toast";
 
 const Icons = {
   MarketPlace: () => (
@@ -13,7 +16,7 @@ const Icons = {
   Dashboard: () => (
     <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
   ),
-  Photos: () => (
+  Exhibition: () => (
     <path
       fillRule="evenodd"
       d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
@@ -273,6 +276,34 @@ function SidebarRight() {
   );
 }
 
+function WorkItems() {
+  return (
+    <ul className="p-1.5 flex flex-wrap">
+      {items.map(({ key, artist, image, title }) => (
+        <li className="w-full lg:w-1/2 xl:w-1/3  p-1.5" key={key}>
+          <a
+            className="block bg-zinc-800 rounded-md w-full overflow-hidden pb-4 shadow-lg"
+            href="#items"
+          >
+            <div
+              className="w-full h-40 bg-center bg-cover relative"
+              style={{ backgroundImage: `url(${image})` }}
+            ></div>
+            <h3 className="font-semibold text-lg px-3 mt-2 text-white">
+              {title}
+            </h3>
+            <div className="flex items-center px-3 mt-2">
+              <span className=" ml-2 text-zinc-400">
+                {artists[artist].handler}
+              </span>
+            </div>
+          </a>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 function Items() {
   return (
     <ul className="p-1.5 flex flex-wrap">
@@ -351,8 +382,66 @@ function ArtworkSelector({ text, index }) {
 }
 
 function Content({ name }) {
+  const [file, setfile] = useState(null);
+  const [photoURL, setPhotoURL] = useState(null);
+
+  const uploadFile = async () => {
+    const storageRef = ref(storage, `images/${file.name + uuidv4()}`);
+
+    // 'file' comes from the Blob or File API
+    uploadBytes(storageRef, file).then((snapshot) => {
+      getDownloadURL(storageRef).then((url) => setPhotoData(url));
+      toast.success("Artwork Added !!");
+      console.log(snapshot);
+      console.log("Uploaded a blob or file!");
+    });
+  };
+
+  const setPhotoData = (URI) => {
+    db.collection("User")
+      .doc(auth.currentUser?.uid)
+      .collection("Photos")
+      .add({
+        name: `${file.name + uuidv4()}`,
+        url: URI,
+      })
+      .then(() => {
+        console.log("Blog published!!!");
+        setPhotoURL("");
+        //  navigate("/dashboard");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <div className="">
+      <Toaster
+        position="top-center"
+        reverseOrder={false}
+        gutter={8}
+        containerClassName=""
+        containerStyle={{}}
+        toastOptions={{
+          // Define default options
+          className: "",
+          duration: 5000,
+          style: {
+            background: "#FA4C86",
+            color: "#fff",
+          },
+
+          // Default options for specific types
+          success: {
+            duration: 3000,
+            theme: {
+              primary: "#FA4C86",
+              secondary: "black",
+            },
+          },
+        }}
+      />
       <h1 className="text-2xl font-bold px-3 mt-3">Dashboard</h1>
       <h2 className="text-zinc-500 px-3 text-xl font-semibold">
         Hello <span className="text-greenish">{name}</span> , Let's create a new
@@ -377,11 +466,22 @@ function Content({ name }) {
 
       <div className="flex flex-col md:flex-row justify-between px-3 mt-3">
         <h2 className="text-xl font-semibold">Trending Artworks</h2>
-        <ul className="inline-flex space-x-3 ">
-          {["Art", "Collectables", "Music", "Sport"].map((text, index) => (
-            <ArtworkSelector key={text} text={text} index={index} />
-          ))}
-        </ul>
+        <div className="flex justify-center items-center space-x-3 ">
+          <p className="text-purple-600 font-semibold">Upload Work</p>
+          <input
+            class="relative m-0 block w-full min-w-0 flex-auto cursor-pointer rounded border border-solid border-neutral-300  bg-clip-padding py-[0.32rem] px-3 leading-[2.15] font-normal text-neutral-700 transition duration-300 ease-in-out file:-mx-3 file:-my-[0.32rem] file:cursor-pointer file:overflow-hidden file:rounded-none file:border-0 file:border-solid file:border-inherit file:px-3 file:py-[0.32rem] file:text-white file:bg-teal-600 file:transition file:duration-150 file:ease-in-out file:[margin-inline-end:0.75rem] file:[border-inline-end-width:1px] hover:file:bg-teal-400 focus:border-primary focus:text-neutral-700 focus:shadow-[0_0_0_1px] focus:shadow-primary focus:outline-none"
+            id="formFileLg"
+            accept="image/x-png,image/gif,image/jpeg"
+            type="file"
+            onChange={(e) => setfile(e.target.files[0])}
+          />
+          <button
+            onClick={uploadFile}
+            class="bg-transparent hover:bg-greenish text-greenish font-semibold hover:text-white py-2 px-4 border border-greenish hover:border-transparent rounded"
+          >
+            Upload
+          </button>
+        </div>
       </div>
     </div>
   );
@@ -502,7 +602,7 @@ function SidebarLeft() {
   return (
     <div className="hidden lg:flex h-screen flex-col justify-between w-48 fixed left-0 top-0 bottom-0 pt-24">
       <ul className="space-y-8">
-        {["Dashboard", "Photos", "MarketPlace", "Blogs", "GetClients"].map(
+        {["Dashboard", "Exhibition", "MarketPlace", "Blogs", "GetClients"].map(
           (key, index) => (
             <SidebarItem key={key} text={key} index={index} />
           )
