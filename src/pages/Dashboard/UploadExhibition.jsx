@@ -163,10 +163,10 @@ const UploadExhibition = () => {
                   }}
                 >
                   <option selected>Choose a exhibitions</option>
-                  <option value="US">Potrait</option>
-                  <option value="CA">Macro</option>
-                  <option value="FR">Black & White</option>
-                  <option value="DE">Landscape</option>
+                  <option value="Potrait">Potrait</option>
+                  <option value="Macro">Macro</option>
+                  <option value="Black & White">Black & White</option>
+                  <option value="Landscape">Landscape</option>
                 </select>
                 <label
                   for="exhibitions"
