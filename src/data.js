@@ -25,7 +25,7 @@ export const navigationData = [
   },
   {
     name: "VoteForBest",
-    href: "#",
+    href: "/showexhibition",
   },
   {
     name: "Photo Prints",
@@ -37,7 +37,7 @@ export const navigationData = [
   },
   {
     name: "Blogs",
-    href: "/blog",
+    href: "/showblog",
   },
   {
     name: "QNA",
@@ -69,7 +69,8 @@ export const featuresData = {
       image: Feature1Img,
       bgImage: Feature1BgImg,
       title: "Take Home a Piece of Art",
-      description: "Here any photogragher can exhibit their work and sell them.",
+      description:
+        "Here any photogragher can exhibit their work and sell them.",
       linkText: "Learn more",
       delay: "100",
     },
@@ -77,7 +78,8 @@ export const featuresData = {
       image: Feature2Img,
       bgImage: Feature2BgImg,
       title: "Support Your Favorite Photographer",
-      description: "Through our web app you can vote for the best photo in our Gallery.This will create a healthy competition among photographers to strive for the best",
+      description:
+        "Through our web app you can vote for the best photo in our Gallery.This will create a healthy competition among photographers to strive for the best",
       linkText: "Learn more",
       delay: "100",
     },
@@ -94,7 +96,8 @@ export const featuresData = {
       image: Feature4Img,
       bgImage: Feature4BgImg,
       title: "Exploring the Art of Photography- Learn, Read and Write",
-      description: "Graphos is a perfect place for young budding photographers to read and learn from the Blogs or the Chat Bot while Experts can share their experience through their Blogs",
+      description:
+        "Graphos is a perfect place for young budding photographers to read and learn from the Blogs or the Chat Bot while Experts can share their experience through their Blogs",
       linkText: "Learn more",
       delay: "100",
     },
