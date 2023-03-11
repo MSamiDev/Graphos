@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 // import copyright data
 import { copyrightData } from '../data';
@@ -15,9 +16,11 @@ const Copyright = () => {
           {/* icon */}
           <div className='-order-1 md:order-1'>
             <div className='w-[60px] h-[60px] flex items-center justify-center rounded-full bg-accent-primary/20 cursor-pointer group'>
+              <a href="/qna/#top">
               <div className='text-3xl text-accent-primary group-hover:scale-110 transition-all'>
                 {icon}
               </div>
+              </a>
             </div>
           </div>
         </div>

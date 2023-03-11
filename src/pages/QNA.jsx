@@ -5,7 +5,7 @@ const QNA = () => {
 	return (
 		<div>
 			<Header />
-			<div className="flex justify-center py-10">
+			<div id="top" className="flex justify-center py-10">
 				<iframe
 					width="650"
 					height="730"
