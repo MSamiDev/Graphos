@@ -1,12 +1,36 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { AiOutlineGoogle } from "react-icons/ai";
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import {
+  GoogleAuthProvider,
+  onAuthStateChanged,
+  signInWithPopup,
+} from "firebase/auth";
 import { auth } from "../firbase";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const SignIn = () => {
+  const navigate = useNavigate();
+  const userActivity = () => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // User is signed in, see docs for a list of available properties
+        // https://firebase.google.com/docs/reference/js/firebase.User
+        const uid = user.uid;
+        navigate("/dashboard");
+        // ...
+      } else {
+        // User is signed out
+        // ...
+      }
+    });
+  };
+
+  useEffect(() => {
+    userActivity();
+  }, []);
+
   const provider = new GoogleAuthProvider();
   const signInWitnPopUp = async () => {
     signInWithPopup(auth, provider)
@@ -17,6 +41,7 @@ const SignIn = () => {
         // The signed-in user info.
         const user = result.user;
         // IdP data available using getAdditionalUserInfo(result)
+        navigate("/dashboard");
         // ...
       })
       .catch((error) => {

@@ -1,11 +1,16 @@
-import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  onAuthStateChanged,
+  updateProfile,
+} from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import { Toaster, toast } from "react-hot-toast";
 import { auth } from "../firbase";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const SignUp = () => {
+  const navigate = useNavigate();
   const [name, setname] = useState("");
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
@@ -27,6 +32,9 @@ const SignUp = () => {
             // An error occurred
             // ...
           });
+        setTimeout(() => {
+          navigate("/signin");
+        }, 2000);
 
         // ...
       })
@@ -38,8 +46,23 @@ const SignUp = () => {
       });
   };
 
+  const userActivity = () => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // User is signed in, see docs for a list of available properties
+        // https://firebase.google.com/docs/reference/js/firebase.User
+        const uid = user.uid;
+        navigate("/dashboard");
+        // ...
+      } else {
+        // User is signed out
+        // ...
+      }
+    });
+  };
+
   useEffect(() => {
-    console.log(auth?.currentUser);
+    userActivity();
   }, []);
 
   return (

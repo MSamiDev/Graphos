@@ -8,6 +8,8 @@ import Home from "./pages/Home";
 import RequestListing from "./pages/RequestListing";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
+import BlogCreate from "./pages/BlogCreate";
+import Dashboard from "./pages/Dashboard/Dashboard";
 
 // import components
 
@@ -24,6 +26,8 @@ const App = () => {
         <Route path="jobpost" element={<RequestListing />} />
         <Route path="signin" element={<SignIn />} />
         <Route path="signup" element={<SignUp />} />
+        <Route path="blogs" element={<BlogCreate />} />
+        <Route path="dashboard" element={<Dashboard />} />
       </Routes>
     </Router>
   );
