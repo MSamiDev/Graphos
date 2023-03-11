@@ -6,6 +6,7 @@ import "aos/dist/aos.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import RequestListing from "./pages/RequestListing";
+import GetClients from "./pages/GetClients";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import BlogCreate from "./pages/BlogCreate";
@@ -26,6 +27,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="jobpost" element={<RequestListing />} />
+        <Route path="getclients" element={<GetClients />} />
         <Route path="signin" element={<SignIn />} />
         <Route path="signup" element={<SignUp />} />
         <Route path="blogs" element={<BlogCreate />} />
