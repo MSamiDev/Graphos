@@ -123,7 +123,7 @@ const BlogCreate = () => {
             <div className="card-image1">
               <h2 className="card-heading">
                 Get start with
-                <small>Write Your First Blog!!</small>
+                <small>Write Your First Blog !</small>
               </h2>
             </div>
             <form className="card-form" onSubmit={handleUserDoc}>
@@ -159,7 +159,7 @@ const BlogCreate = () => {
                   className="input-field"
                   required
                 />
-                <label className="input-label">Write Appropiate Tag's</label>
+                <label className="input-label">Give Appropiate Tag</label>
               </div>
               <div className="action">
                 <button className="action-button" type="submit">

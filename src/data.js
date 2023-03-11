@@ -42,55 +42,55 @@ export const navigationData = [
 ];
 
 export const heroData = {
-  title: ` Order Products Faster Easier`,
+  title: `Exhibit, sell, and get hired - all on Graphos.`,
   subtitle:
-    "Order your favorite foods at any time and we will deliver them right to where you are.",
+    "Your all-in-one creative platform for photography - showcase, sell, and grow your artistry with Graphos.",
   btnText: "Get Started",
   image: HeroImage,
 };
 
 export const aboutData = {
   image: AboutImg,
-  title: "Find Out A Little More About Us",
+  title: "Where art meets commerce: Graphos for photographers.",
   subtitle:
-    "We are a company dedicated to the distribution of products by delivery to your home or to the place where you are, with the best quality of delivery.",
+    "Welcome to Graphos, the one-stop web-app for photographers looking to showcase their creativity and grow their business. With Graphos, photographers can easily exhibit their work, sell their prints in our marketplace, create artistic styles and get hired by clients who love their style.",
 };
 
 export const featuresData = {
-  title: "Some Services We Offer",
+  title: "Our Key Services",
   subtitle:
-    "With our app you can view the route of your order, from our local headquarters to the place where you are. Look for the app now!",
+    "Here are some of the features of the web app . Most of the features are available if you login as a photographer",
   list: [
     {
       image: Feature1Img,
       bgImage: Feature1BgImg,
-      title: "Payment Done",
-      description: "Pay with a Visa or PayPal card and without much ado",
+      title: "Take Home a Piece of Art",
+      description: "Here any photogragher can exhibit their work and sell them.",
       linkText: "Learn more",
       delay: "100",
     },
     {
       image: Feature2Img,
       bgImage: Feature2BgImg,
-      title: "Find Your Product",
-      description: "We offer sale of products through the Internet..",
+      title: "Support Your Favorite Photographer",
+      description: "Through our web app you can vote for the best photo in our Gallery.This will create a healthy competition among photographers to strive for the best",
       linkText: "Learn more",
       delay: "100",
     },
     {
       image: Feature3Img,
       bgImage: Feature3BgImg,
-      title: "Print Out",
+      title: "Hire Your Photographer",
       description:
-        "Print out service gives you convenience if someday you need print data, just edit it all and just print it.",
+        " Photographers want to get hired may share their details , We will connect them with their clients.",
       linkText: "Learn more",
       delay: "100",
     },
     {
       image: Feature4Img,
       bgImage: Feature4BgImg,
-      title: "Product Received",
-      description: "In our app you can see the delay time of your order...",
+      title: "Exploring the Art of Photography- Learn, Read and Write",
+      description: "Graphos is a perfect place for young budding photographers to read and learn from the Blogs or the Chat Bot while Experts can share their experience through their Blogs",
       linkText: "Learn more",
       delay: "100",
     },
