@@ -45,10 +45,13 @@ const Header = () => {
             <NavMobile />
           </div>
 
-          <button className="btn btn-quaternary flex items-center gap-x-[20px] group">
+          <Link
+            to={"/signup"}
+            className="btn btn-quaternary flex items-center gap-x-[20px] group"
+          >
             Register Now
             <BsArrowRight className="text-2xl text-accent-primary group-hover:text-white transition" />
-          </button>
+          </Link>
 
           {/* nav trigger btn / only shows on mobile screens */}
           <div

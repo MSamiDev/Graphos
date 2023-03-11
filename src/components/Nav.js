@@ -1,16 +1,17 @@
-import React from 'react';
+import React from "react";
+import { Link } from "react-router-dom";
 
 // import navigation data
-import { navigationData } from '../data';
+import { navigationData } from "../data";
 
 const Nav = () => {
   return (
     <nav>
-      <ul className='flex gap-x-8'>
+      <ul className="flex gap-x-8">
         {navigationData.map((item, index) => {
           return (
             <li key={index}>
-              <a href={item.href}>{item.name}</a>
+              <Link to={item.href}>{item.name}</Link>
             </li>
           );
         })}

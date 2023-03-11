@@ -21,7 +21,7 @@ import Feature4BgImg from "../src/assets/img/features/feature4_bg.png";
 export const navigationData = [
   {
     name: "Home",
-    href: "#",
+    href: "/",
   },
   {
     name: "VoteForBest",
@@ -33,11 +33,11 @@ export const navigationData = [
   },
   {
     name: "Hire Photographers",
-    href: "#",
+    href: "/jobpost",
   },
   {
     name: "Blogs",
-    href: "#",
+    href: "/blog",
   },
 ];
 
