@@ -39,6 +39,10 @@ export const navigationData = [
     name: "Blogs",
     href: "/blog",
   },
+  {
+    name: "QNA",
+    href: "/qna",
+  },
 ];
 
 export const heroData = {
