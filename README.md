@@ -16,9 +16,12 @@
 
 ## How it works:
 Our Platform is an one stop progressive web app for photographers and also for people searching for one . It helps you to show your work , creates a your portfolio, generate aristic images mixing art with photography , get yourself hired as a photographer and  generate revenue for yourself by selling your photos.
-<img src="" width="500px" alt="">   
+
+<img src="https://user-images.githubusercontent.com/73426684/224524738-2fbd739d-6558-4084-9f0a-f801ad0d71ff.jpg" width="500px" alt="">   
 
 <p align="right">(<a href="#top">back to top</a>)</p>
+
+
 ---
 
 ## Main Features 
@@ -26,8 +29,12 @@ Our Platform is an one stop progressive web app for photographers and also for p
 ### Take Home a Piece of Art
 
 One can buy from the gallery and thus photographers can generate revenue by selling digital art 
-<img src="" width="500px" alt="">
+<img src="https://user-images.githubusercontent.com/73426684/224525048-3055ae98-30be-487e-a5c5-d9e7db84b3a7.jpeg" width="500px" alt="">
 
+### See trending Artworks 
+We can vote the favaourite photo to increase enthusium among photographers. On their dashboard they can see trending photos
+
+<img src="https://user-images.githubusercontent.com/73426684/224525371-1b67327a-a2b8-4891-96de-898e0cd69beb.jpg" width="500px" alt="">
 ### Generate Artistic Photos 
 
 Most often during pandemic/epidemic or in case of any disaster photographers cannot go outside to click photos. So here he/she can try to generate photos by combining art and photography 
@@ -37,13 +44,16 @@ Most often during pandemic/epidemic or in case of any disaster photographers can
 ### Get Hired 
 
 Photographers can send their portflio and work to get hired by clients .
-<img src="" width="500px" alt="">
+
+<img src="https://user-images.githubusercontent.com/73426684/224525410-1a80fecc-7ca7-4ee9-a206-f9690f9dc6bf.jpg" width="500px" alt="">
 
 ### Write and learn Blogs 
 
 Most experienced photographers who want to share their expertise can write blogs to help begginers.
 
-<img src="" width="500px" alt="">
+<img src="https://user-images.githubusercontent.com/73426684/224525515-180dc953-8c7c-4154-ab43-2e172e4d0e00.jpg" width="500px" alt="">
+
+<img src="https://user-images.githubusercontent.com/73426684/224525521-d2073bbb-6e25-44b3-a3ce-614b8e1a9160.jpeg" width="450px" alt="">
 
 ### FAQ BOT  - Grapho
 
