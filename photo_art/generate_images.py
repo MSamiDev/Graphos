@@ -87,7 +87,7 @@ def plot_images(content_image, style_image, mixed_image):
     # Ensure the plot is shown correctly with multiple plots
     # in a single Notebook cell.
 
-    plt.show()
+    # plt.show()
 
 def mean_squared_error(a, b):
     return tf.reduce_mean(tf.square(a - b))
@@ -102,7 +102,6 @@ def create_content_loss(session, model, content_image, layer_ids):
     content_image: Numpy float array with the content-image.
     layer_ids: List of integer id's for the layers to use in the model.
     """
-    
     # Create a feed-dict with the content-image.
     feed_dict = model.create_feed_dict(image=content_image)
 
@@ -385,10 +384,10 @@ def style_transfer(content_image, style_image,
     # Return the mixed-image.
     return mixed_image
 #First we load the content-image which has the overall contours that we want in the mixed-image.
-content_filename = 'photo_art\img1.jpg'
+content_filename = 'photo_art\imgggg1.jpg'
 content_image = load_image(content_filename, max_size=None)
 #Then we load the style-image which has the colours and textures we want in the mixed-image.
-style_filename = 'photo_art\img2.jpg'
+style_filename = 'photo_art\imggg2.jpg'
 style_image = load_image(style_filename, max_size=300)
 #Then we define a list of integers which identify the layers in the neural network that we want to use 
 #for matching the content-image. These are indices into the layers in the neural network. 

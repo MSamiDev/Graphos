@@ -1,70 +1,146 @@
-# Getting Started with Create React App
+# Graphos: Exhibit, sell, and get hired - all on Graphos.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<div align="center">
+  <a id="top" href="https://graphos.vercel.app/" target="blank">
+    <img src="src\assets\img\logo.png" width="100px" alt="">
+  </a>
 
-## Available Scripts
+  <h3 align="center">Graphos - The PhotoVerse</h3>
 
-In the project directory, you can run:
+  <p align="center">
+    <a href="https://graphos.vercel.app/" target="blank">Live Demo</a> |
+    <a href="https://github.com/Pranshu321/Graphos/issues" target="blank">Report Bug</a> |
+    <a href="https://github.com/Pranshu321/Graphos/issues" target="blank">Request Feature</a>
+  </p>
+</div>
 
-### `npm start`
+## How it works:
+Our Platform is an one stop progressive web app for photographers and also for people searching for one . It helps you to show your work , creates a your portfolio, generate aristic images mixing art with photography , get yourself hired as a photographer and  generate revenue for yourself by selling your photos.
+<img src="" width="500px" alt="">   
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<p align="right">(<a href="#top">back to top</a>)</p>
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Main Features 
 
-### `npm test`
+### Take Home a Piece of Art
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+One can buy from the gallery and thus photographers can generate revenue by selling digital art 
+<img src="" width="500px" alt="">
 
-### `npm run build`
+### Generate Artistic Photos 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Most often during pandemic/epidemic or in case of any disaster photographers cannot go outside to click photos. So here he/she can try to generate photos by combining art and photography 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<img src="https://user-images.githubusercontent.com/73426684/224524599-7fc349ae-3121-491b-b8b8-7a1ca280134d.jpeg" width="500px" alt="">
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Get Hired 
 
-### `npm run eject`
+Photographers can send their portflio and work to get hired by clients .
+<img src="" width="500px" alt="">
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Write and learn Blogs 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Most experienced photographers who want to share their expertise can write blogs to help begginers.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<img src="" width="500px" alt="">
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### FAQ BOT  - Grapho
 
-## Learn More
+Here our bot will answer all relevant questions on photography. A must for begginers.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<img src="https://user-images.githubusercontent.com/73426684/224524603-e370e101-eef8-4653-90de-4802c85c39e9.jpg" width="500px" alt="">
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-### Code Splitting
+---
+<!-- GETTING STARTED -->
+## Getting Started
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+This is an example of how you may give instructions on setting up your project locally.
+To get a local copy up and running follow these simple example steps.
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+##  Installation
+_Below is an example of how you can instruct your audience on installing and setting up your app. This project doesn't rely on any external dependencies or services._
 
-### Making a Progressive Web App
+1. Clone the repo
+   ```sh
+   git clone https://github.com/Pranshu321/Graphos.git
+   ```
+2. Now install all npm packages.
+   ```sh
+    npm i 
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+3. Now you have define own firebase project config at `firebase/firebaseconfig.js`.
 
-### Advanced Configuration
+   ![image](https://user-images.githubusercontent.com/86917304/183728317-30372103-f0d7-4e99-b12c-7f0cd825ea18.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+4. Open another terminal, install the requirements.txt and run the photo_art API at `localhost:8000`
+  
+    ```
+    pip install -r requirements. txt
+    
+    uvicorn photo_art.app:app --reoload
+    ```
 
-### Deployment
+5. After all steps defined above you can run command int the previous terminal `npm start` to run application at `localhost:3000`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Tech Stack
+1. **Frontend frameworks**  : `React` ,  `SASS` , `react-router-dom` , `react-toastify` ,  `react-helmet`
+
+2. **Authenciation**        : `Firebase`
+
+3. **Database and storage** : `Firestore`
+
+4. **Services**             : `Postman` , `Tensorflow` , `Vercel` 
+
+5. **Backend framework**    : `FastAPI`
+
+6. **ML Frameworks**        : `Numpy` , `Pandas` , `Tensorflow` , `Sklearn`
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+---
+
+## Contributing
+
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+
+**Don't forget to give the project a star! Thanks again!**
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- CONTACT -->
+## Contact
+
+Team Name - Hackit
+
+Leader - [Pranshu](mailto:pranshujain0331@gmail.com )
+
+Project Link: [Graphos](https://graphos.vercel.app/)
+
+Video Link : [Graphos]()
+
+## Team Members: 
+
+- [Pranshu Jain](https://github.com/Pranshu321)
+- [Sreetama Ghosh Hazar](https://github.com/Sreetama2001)
+- [Mohammad Sami Shaikh](https://github.com/MSamiDev)
+
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
