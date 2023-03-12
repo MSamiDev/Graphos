@@ -17,6 +17,7 @@ import MarketPlaceUpload from "./pages/Dashboard/MarketPlaceUpload";
 import PhotoPrints from "./pages/PhotoPrints";
 import Exhibition from "./pages/Exhibition";
 import ShowBlogs from "./pages/ShowBlogs";
+import SingleBlogShow from "./pages/SingleBLogShow";
 
 // import components
 
@@ -35,6 +36,7 @@ const App = () => {
         <Route path="signin" element={<SignIn />} />
         <Route path="signup" element={<SignUp />} />
         <Route path="showblog" element={<ShowBlogs />} />
+        <Route path="/showblog/:id" element={<SingleBlogShow />} />
         <Route path="blogs" element={<BlogCreate />} />
         <Route path="dashboard" element={<Dashboard />} />
         <Route path="exhibition" element={<UploadExhibition />} />

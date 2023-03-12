@@ -154,9 +154,27 @@ const Dashboard = () => {
     });
   };
 
+  const [document, setDocument] = useState();
+  function getBlogs() {
+    let jobs = [];
+    db.collection("User")
+      .doc(auth.currentUser?.uid)
+      .collection("Photos")
+      .onSnapshot((snapshot) => {
+        snapshot.docs.map((doci) => {
+          console.log(doci.id, doci.data().name);
+          jobs.push(doci.data());
+        });
+      });
+    console.log("Data", jobs);
+    setDocument(jobs);
+  }
+
   useEffect(() => {
     userActivity();
-  }, []);
+    getBlogs();
+  });
+  console.log("main", document);
   return (
     <>
       <SidebarLeft />
@@ -167,6 +185,7 @@ const Dashboard = () => {
         <div className=" grow ">
           <Content name={name} />
           <Items />
+          <WorkItems />
         </div>
         {/* <SidebarRight /> */}
       </div>
@@ -277,29 +296,49 @@ function SidebarRight() {
 }
 
 function WorkItems() {
+  const [document, setDocument] = useState();
+  // function getBlogs() {
+  //   let jobs = [];
+  //   db.collection("User")
+  //     .doc(auth.currentUser?.uid)
+  //     .collection("Photos")
+  //     .onSnapshot((snapshot) => {
+  //       snapshot.docs.map((doci) => {
+  //         // console.log(doci.id, doci.data());
+  //         // console.log(doci.data());
+  //         jobs.push({ ...doci?.data(), id: doci?.id });
+  //       });
+  //     });
+
+  //   setDocument(jobs);
+  // }
+
+  // useEffect(() => {
+  //   getBlogs();
+  // });
+
+  console.log(document);
+
   return (
     <ul className="p-1.5 flex flex-wrap">
-      {items.map(({ key, artist, image, title }) => (
-        <li className="w-full lg:w-1/2 xl:w-1/3  p-1.5" key={key}>
-          <a
-            className="block bg-zinc-800 rounded-md w-full overflow-hidden pb-4 shadow-lg"
-            href="#items"
-          >
+      {/* {document?.map(({ item }) => (
+        <li className="w-full lg:w-1/2 xl:w-1/3  p-1.5" key={item.id}>
+          <div className="block bg-zinc-800 rounded-md w-full overflow-hidden pb-4 shadow-lg">
             <div
               className="w-full h-40 bg-center bg-cover relative"
-              style={{ backgroundImage: `url(${image})` }}
+              style={{ backgroundImage: `url(${item.url})` }}
             ></div>
             <h3 className="font-semibold text-lg px-3 mt-2 text-white">
-              {title}
+              {"Graphoic"}
             </h3>
             <div className="flex items-center px-3 mt-2">
               <span className=" ml-2 text-zinc-400">
-                {artists[artist].handler}
+                {auth.currentUser?.displayName}
               </span>
             </div>
-          </a>
+          </div>
         </li>
-      ))}
+      ))} */}
     </ul>
   );
 }
