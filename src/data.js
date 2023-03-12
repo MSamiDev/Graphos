@@ -94,6 +94,22 @@ export const featuresData = {
       linkText: "Learn more",
       delay: "100",
     },
+    {
+      image: Feature1Img,
+      bgImage: Feature1BgImg,
+      title: "Take Home a Piece of Art",
+      description: "Here any photogragher can exhibit their work and sell them.",
+      linkText: "Learn more",
+      delay: "100",
+    },
+    {
+      image: Feature2Img,
+      bgImage: Feature2BgImg,
+      title: "Support Your Favorite Photographer",
+      description: "Through our web app you can vote for the best photo in our Gallery.This will create a healthy competition among photographers to strive for the best",
+      linkText: "Learn more",
+      delay: "100",
+    },
   ],
 };
 
