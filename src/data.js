@@ -73,6 +73,7 @@ export const featuresData = {
         "Here any photogragher can exhibit their work and sell them.",
       linkText: "Learn more",
       delay: "100",
+      href: "/photoprints",
     },
     {
       image: Feature2Img,
@@ -82,6 +83,7 @@ export const featuresData = {
         "Through our web app you can vote for the best photo in our Gallery.This will create a healthy competition among photographers to strive for the best",
       linkText: "Learn more",
       delay: "100",
+      href: "/showexhibition",
     },
     {
       image: Feature3Img,
@@ -91,6 +93,7 @@ export const featuresData = {
         " Photographers want to get hired may share their details , We will connect them with their clients.",
       linkText: "Learn more",
       delay: "100",
+      href: "/jobpost",
     },
     {
       image: Feature4Img,
@@ -100,22 +103,27 @@ export const featuresData = {
         "Graphos is a perfect place for young budding photographers to read and learn from the Blogs or the Chat Bot while Experts can share their experience through their Blogs",
       linkText: "Learn more",
       delay: "100",
+      href: "/showblog",
     },
     {
-      image: Feature1Img,
+      image:
+        "https://user-images.githubusercontent.com/86917304/224525626-f3abcd8b-22f5-4743-be4e-1567cf53725c.png",
       bgImage: Feature1BgImg,
-      title: "Take Home a Piece of Art",
-      description: "Here any photogragher can exhibit their work and sell them.",
+      title: "Graphos Chatbot",
+      description: "Resolve Your Doubts with our smart Chatbot",
       linkText: "Learn more",
       delay: "100",
+      href: "/qna",
     },
     {
       image: Feature2Img,
       bgImage: Feature2BgImg,
-      title: "Support Your Favorite Photographer",
-      description: "Through our web app you can vote for the best photo in our Gallery.This will create a healthy competition among photographers to strive for the best",
+      title: "Get Hired",
+      description:
+        "We also work as the platform where you will get the opportunities and upscale in photography career",
       linkText: "Learn more",
       delay: "100",
+      href: "/getclients",
     },
   ],
 };

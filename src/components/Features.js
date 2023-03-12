@@ -5,6 +5,7 @@ import { featuresData } from "../data";
 
 // import icons
 import { BsArrowRight } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const Features = () => {
   // destructure features data
@@ -33,8 +34,15 @@ const Features = () => {
         <div className="grid grid-cols-1 gap-[50px] xl:grid-cols-2">
           {list.map((feature, index) => {
             // destructure feature
-            const { image, bgImage, title, description, linkText, delay } =
-              feature;
+            const {
+              image,
+              bgImage,
+              title,
+              description,
+              linkText,
+              delay,
+              href,
+            } = feature;
             // feature item
             return (
               <div
@@ -63,9 +71,12 @@ const Features = () => {
                   <p className="font-light italic mb-4">{description}</p>
                   {/* link & arrow */}
                   <div className="flex items-center gap-x-2 group">
-                    <a className="text-primary font-bold" href="#">
+                    <Link
+                      className="text-primary cursor-pointer font-bold"
+                      to={href}
+                    >
                       {linkText}
-                    </a>
+                    </Link>
                     <BsArrowRight className="text-xl text-accent-primary group-hover:ml-[5px] transition-all" />
                   </div>
                 </div>

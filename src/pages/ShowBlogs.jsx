@@ -28,7 +28,7 @@ const ShowBlogs = () => {
       <div className="my-5">
         <Header />
       </div>
-      <div className="flex justify-center gap-10 min-h-screen max-h-max my-5">
+      <div className="flex justify-center gap-10 min-h-screen max-h-max my-5 mx-10">
         {document?.map((item) => (
           <div className="relative block overflow-hidden w-1/3 h-72 rounded-lg border border-gray-100 p-4 sm:p-6 lg:p-8">
             <span className="absolute inset-x-0 bottom-0 h-2 bg-gradient-to-r from-green-300 via-blue-500 to-purple-600" />
@@ -49,10 +49,12 @@ const ShowBlogs = () => {
                 />
               </div>
             </div>
-            <div className="mt-4">
-              <p className="max-w-[40ch] text-sm text-gray-500">{item.text}</p>
+            <div className="mt-2">
+              <p className="max-w-[40ch] text-sm text-gray-500">
+                {item.text.slice(0, 100)}
+              </p>
             </div>
-            <dl className="mt-6 flex gap-4 sm:gap-6">
+            <dl className="mt-2 flex gap-4 sm:gap-6">
               <div className="flex flex-col-reverse">
                 <dt className="text-sm font-medium text-gray-600">Published</dt>
                 <dd className="text-xs text-gray-500">{item.Date}</dd>
@@ -65,7 +67,7 @@ const ShowBlogs = () => {
               </div>
             </dl>
             <Link to={`/showblog/${item.id}`}>
-              <div className="py-5">
+              <div className="py-1">
                 <button class=" bg-teal-500 hover:bg-teal-400 text-white font-bold py-2 px-4 border-b-4 border-teal-700 hover:border-teal-500 rounded">
                   Read More
                 </button>
