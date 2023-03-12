@@ -33,7 +33,9 @@ const UploadExhibition = () => {
     title: "",
     text: "",
     tag: "",
+    exhibition: "",
     url: "",
+    likes: 0,
     Date: new Date().toLocaleDateString(),
     Time: new Date().toLocaleTimeString(),
   });
@@ -151,6 +153,27 @@ const UploadExhibition = () => {
                   required
                 />
                 <label className="input-label">Write Appropiate Tag's</label>
+              </div>
+              <div className="input">
+                <select
+                  id="countries"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+                  onChange={(e) => {
+                    setuser({ ...user, exhibition: e.target.value });
+                  }}
+                >
+                  <option selected>Choose a exhibitions</option>
+                  <option value="Potrait">Potrait</option>
+                  <option value="Macro">Macro</option>
+                  <option value="Black & White">Black & White</option>
+                  <option value="Landscape">Landscape</option>
+                </select>
+                <label
+                  for="exhibitions"
+                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >
+                  Select Exhibitions
+                </label>
               </div>
               <div className="input">
                 <input
