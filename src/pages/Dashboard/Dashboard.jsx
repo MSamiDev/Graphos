@@ -154,27 +154,9 @@ const Dashboard = () => {
     });
   };
 
-  const [document, setDocument] = useState();
-  function getBlogs() {
-    let jobs = [];
-    db.collection("User")
-      .doc(auth.currentUser?.uid)
-      .collection("Photos")
-      .onSnapshot((snapshot) => {
-        snapshot.docs.map((doci) => {
-          console.log(doci.id, doci.data().name);
-          jobs.push(doci.data());
-        });
-      });
-    console.log("Data", jobs);
-    setDocument(jobs);
-  }
-
   useEffect(() => {
     userActivity();
-    getBlogs();
-  });
-  console.log("main", document);
+  }, []);
   return (
     <>
       <SidebarLeft />
@@ -185,7 +167,6 @@ const Dashboard = () => {
         <div className=" grow ">
           <Content name={name} />
           <Items />
-          <WorkItems />
         </div>
         {/* <SidebarRight /> */}
       </div>
@@ -296,37 +277,39 @@ function SidebarRight() {
 }
 
 function WorkItems() {
-  const [document, setDocument] = useState();
-  // function getBlogs() {
-  //   let jobs = [];
-  //   db.collection("User")
-  //     .doc(auth.currentUser?.uid)
-  //     .collection("Photos")
-  //     .onSnapshot((snapshot) => {
-  //       snapshot.docs.map((doci) => {
-  //         // console.log(doci.id, doci.data());
-  //         // console.log(doci.data());
-  //         jobs.push({ ...doci?.data(), id: doci?.id });
-  //       });
-  //     });
+  const [document, setDocument] = useState([]);
+  function getBlogs() {
+    let jobs = [];
+    db.collection("User")
+      .doc(auth.currentUser?.uid)
+      .collection("Photos")
+      .onSnapshot((snapshot) => {
+        snapshot.docs.map((doci) => {
+          // console.log(doci.id, doci.data());
+          // console.log(doci.data());
+          jobs.push({ ...doci.data(), id: doci.id });
+          // console.log(jobs);
+        });
+        // console.log(jobs);
+        setDocument(jobs);
+        console.log("Document", document);
+      });
+  }
 
-  //   setDocument(jobs);
-  // }
+  useEffect(() => {
+    getBlogs();
+  });
 
-  // useEffect(() => {
-  //   getBlogs();
-  // });
-
-  console.log(document);
+  // console.log(document);
 
   return (
     <ul className="p-1.5 flex flex-wrap">
-      {/* {document?.map(({ item }) => (
-        <li className="w-full lg:w-1/2 xl:w-1/3  p-1.5" key={item.id}>
+      {document?.map(({ item }) => (
+        <li className="w-full lg:w-1/2 xl:w-1/3  p-1.5" key={item?.id}>
           <div className="block bg-zinc-800 rounded-md w-full overflow-hidden pb-4 shadow-lg">
             <div
               className="w-full h-40 bg-center bg-cover relative"
-              style={{ backgroundImage: `url(${item.url})` }}
+              style={{ backgroundImage: `url(${item?.url})` }}
             ></div>
             <h3 className="font-semibold text-lg px-3 mt-2 text-white">
               {"Graphoic"}
@@ -334,11 +317,12 @@ function WorkItems() {
             <div className="flex items-center px-3 mt-2">
               <span className=" ml-2 text-zinc-400">
                 {auth.currentUser?.displayName}
+                {item?.id}
               </span>
             </div>
           </div>
         </li>
-      ))} */}
+      ))}
     </ul>
   );
 }
@@ -356,7 +340,7 @@ function Items() {
               className="w-full h-40 bg-center bg-cover relative"
               style={{ backgroundImage: `url(${image})` }}
             >
-              <div className="absolute left-1/2 -translate-x-1/2 bottom-2  w-5/6 bg-white rounded-md flex items-center bg-opacity-30 backdrop-blur-md">
+              {/* <div className="absolute left-1/2 -translate-x-1/2 bottom-2  w-5/6 bg-white rounded-md flex items-center bg-opacity-30 backdrop-blur-md">
                 <div className="w-1/2 p-3 text-purple-800">
                   <h3 className="font-semibold">Current Bid</h3>
                   <div className="">{price} Rs.</div>
@@ -370,34 +354,34 @@ function Items() {
                     )}
                   />
                 </div>
-              </div>
+              </div> */}
             </div>
             <h3 className="font-semibold text-lg px-3 mt-2 text-white">
               {title}
             </h3>
             <div className="flex items-center px-3 mt-2">
-              <img
+              {/* <img
                 src={artists[artist].image}
                 className="w-10 h-10 rounded-full"
                 alt="item-owner"
-              />
+              /> */}
               <span className=" ml-2 text-zinc-400">
-                {artists[artist].handler}
+                {auth.currentUser?.displayName}
               </span>
             </div>
             <div className="flex mt-2">
-              <div className="p-3 w-1/2">
+              {/* <div className="p-3 w-1/2">
                 <button className="bg-gradient-to-tr text-white from-fuchsia-600 to-violet-600  w-full h-12 rounded-md font-semibold">
                   Place a bid
                 </button>
-              </div>
-              <div className="p-3 w-1/2">
+              </div> */}
+              {/* <div className="p-3 w-1/2">
                 <button className="bg-gradient-to-tr from-fuchsia-600 to-violet-600  w-full rounded-md font-semibold h-12 p-px">
                   <div className="bg-zinc-800 text-greenish w-full h-full rounded-md grid place-items-center">
                     View artwork
                   </div>
                 </button>
-              </div>
+              </div> */}
             </div>
           </a>
         </li>
@@ -551,7 +535,11 @@ function Header() {
           </div>
         </div>
         <img
-          src="https://assets.codepen.io/3685267/nft-dashboard-pro-1.jpg"
+          src={
+            auth.currentUser?.photoURL != null
+              ? auth.currentUser?.photoURL
+              : "https://assets.codepen.io/3685267/nft-dashboard-pro-1.jpg"
+          }
           alt="user"
           className="w-10 h-10 rounded-full ml-4"
         />
